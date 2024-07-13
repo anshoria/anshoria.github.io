@@ -1,0 +1,334 @@
+
+
+h2 p {
+    font-family: Montserrat;
+}
+
+body {
+    background-color: white;
+}
+
+.nama {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+
+#hero{
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+}
+
+#about {
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+}
+
+#projects{
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+}
+
+#skills {
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+    height: 40vh;
+    background-color: black;
+}
+#contact{
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+}
+
+/* navbar */
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-left: 15px;
+}
+.navbar-toggler {
+    border: none;
+    font-size: 1;
+    color: black;
+}
+.navbar {
+    transition: background-color 0.3s ease;
+}
+.navbar.transparent {
+    background-color: rgba(255, 255, 255, 0.75); 
+}
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.75); /* Warna putih dengan transparansi */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}  
+ 
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: black;
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: black;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        visibility: visible;
+        width: 100%;
+    }
+}
+
+/* hero */
+.foto {
+    position: relative;
+}
+
+.blob {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Mengatur blob di belakang gambar */
+}
+
+.blob svg {
+    width: 100%;
+    height: auto;
+}
+
+.foto img {
+    position: relative;
+    z-index: 1; /* Mengatur gambar di depan blob */
+    border-radius: 50%; /* Jika ingin gambar berbentuk lingkaran */
+}
+
+/* about me */
+.sertifikat {
+    margin-top: 90px;
+    height: 20vh;
+    background-color: black;
+}
+
+/* btn-preview */
+
+#btn-preview:hover {
+    background-color: black;
+    color: white;
+}
+
+/* projek card */
+.card {
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.card-body {
+    padding: 25px;
+    margin-top: -30px;
+}
+.card-img-top {
+    border-radius: 30px;
+    padding: 20px;
+    height: 12rem;
+}
+
+/* projek */
+.collapse {
+    margin-top: 35px;
+}
+.cover {
+    width: 100%;
+    height: 200px; /* Atur tinggi sesuai kebutuhan */
+    overflow: hidden; /* Sembunyikan bagian gambar yang melampaui batas kontainer */
+    position: relative;
+}
+
+.modal-body {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.icon i {
+    font-size: 6rem;
+    position: absolute;
+    padding-left: 150px;
+    top: 160px;
+    
+}
+
+/* skills */
+.skills-icon svg{
+    width: 70px;
+    height: 70px;
+    margin: 1rem;
+}
+
+
+/* media queries */
+@media (max-width: 768px){
+    h2 {
+        font-size: 1.3rem !important;
+    }
+    #hero {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    #about {
+        padding-top: 4rem;
+        padding-bottom: 0;
+    }
+    #projects {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+    #skills{
+        padding-top: 2rem;
+        padding-bottom: 0;
+        height: 20vh;
+    }
+    #contact {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .sidebar {
+        backdrop-filter: blur(10px) !important;
+    }
+    /* hero */
+    .foto {
+        padding-top: 0px !important;
+        margin-bottom: 10px;
+    }
+    .hero-row {
+        display: flex;
+        justify-content: center;
+    }
+    .hero-col {
+        padding-top: 10px !important;
+    }
+    .hero-col p {
+        font-size: 1.1rem !important;
+        display: flex;
+        justify-content: center;
+    }
+    .hero-col h2 {
+        font-size: 1.5rem !important;
+        display: flex;
+        justify-content: center;
+    }
+    .hero-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* about */
+    .about-row {
+        margin-top: 20px !important;
+    }
+    .about-col {
+        display: flex;
+        justify-content: center;
+    }
+    .about-h2 {
+        padding-left: 30px;
+    }
+    .about-hr {
+        margin-top: 5px !important;
+        margin-bottom: 10px !important;
+    }
+    .img-about{
+        width: 350px !important;
+    }
+    .about-p {
+        font-size: 1rem !important;
+        margin-top: 5px !important;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .row-col {
+        padding-left: 40px;
+    }
+    .row-p {
+        margin-bottom: 4px !important;
+    }
+    .about-a {
+        padding-left: 40px;
+    }
+    .projek-card {
+        padding: 0 !important;
+    }
+    .projek-col {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+    .collapse {
+        margin: 0 !important;
+    }
+    /* projek */
+    .projek-button {
+        margin-top: 0rem !important;
+    }
+    .modal-body {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .content {
+        margin-top: 15px !important;
+    }
+    .icon i {
+        font-size: 4rem;
+        position: absolute;
+        padding-left: 50px;
+        top: 190px;
+    }
+    .modal-title {
+        font-size: 1.3rem !important;
+    }
+    .modal-label{
+        font-size: 0.8rem !important;
+    }
+    .modal-p {
+        font-size: 0.8rem !important;
+    }
+
+    /* skills */
+    .skills-icon {
+        margin-top: 20px !important;
+    }
+    .skills-icon svg {
+        width: 40px;
+        height: 40px;
+        margin: 0.5rem;
+    }
+    /* footer */
+    .footer-p {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {}
+
+@media only screen and (min-width: 992px) and (max-width: 1400px){
+
+}
