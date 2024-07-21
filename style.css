@@ -154,8 +154,8 @@ body {
 }
 
 /* projek */
-.collapse {
-    margin-top: 35px;
+.projek-card.hidden {
+    margin-top: 2rem;
 }
 .cover {
     width: 100%;
@@ -282,10 +282,11 @@ body {
         display: flex;
         justify-content: center;
     }
-    .collapse {
-        margin: 0 !important;
-    }
+
     /* projek */
+    .projek-card.hidden {
+        margin-top: 0.4rem;
+    }
     .projek-button {
         margin-top: 0rem !important;
     }
