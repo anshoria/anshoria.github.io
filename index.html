@@ -108,7 +108,7 @@
           </div>
         </div> 
         <div class="about-a">
-          <a class="btn btn-dark mt-2 px-4 py-2" href="#">Download CV</a>
+          <a class="btn btn-dark mt-2 px-4 py-2" onclick="PrintPDF()" target="_blank">My Resume</a>
         </div>
       </div>
     </div>
@@ -645,6 +645,12 @@
         title: "Oops...",
         text: "Halaman web tidak tersedia!",
       });
+    }
+  </script>
+  <!-- Print PDF -->
+  <script>
+    function PrintPDF() {
+      window.open('file/MyResume.pdf');
     }
   </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
