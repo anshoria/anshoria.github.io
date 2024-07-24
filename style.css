@@ -214,6 +214,9 @@ body {
     .sidebar {
         backdrop-filter: blur(10px) !important;
     }
+    .offcanvas-end {
+        width: 65% !important;
+    }
     /* hero */
     .foto {
         padding-top: 0px !important;
@@ -307,10 +310,10 @@ body {
         font-size: 1.3rem !important;
     }
     .modal-label{
-        font-size: 0.8rem !important;
+        font-size: 0.7rem !important;
     }
     .modal-p {
-        font-size: 0.8rem !important;
+        font-size: 0.7rem !important;
     }
 
     /* skills */
@@ -328,7 +331,8 @@ body {
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 992px) {}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+}
 
 @media only screen and (min-width: 992px) and (max-width: 1400px){
 
