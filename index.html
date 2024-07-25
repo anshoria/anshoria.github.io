@@ -17,6 +17,8 @@
 
   <!-- sweetalert -->
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.min.css" rel="stylesheet">
+
+  
 </head>
 <body>
     <!-- navbar -->
@@ -48,6 +50,8 @@
             </ul>
           </div>
         </div>
+        <!-- Fitur Star -->
+        <a class="btn btn-light px-4 py-2 border-dark bi bi-star" id="like-button"> <span id="like-count">0</span></a> 
         <a class="navbar-brand" href="https://github.com/anshoria" target="_blank"><i
           class="bi bi-github fs-3"></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -82,7 +86,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- about -->
   <section class="container" id="about">
     <h2 class="text-center">About Me</h2>
@@ -632,11 +636,119 @@
         class="text-primary">Bootstrap</b></p>
     </div>
   </footer>
+
+  <!-- firebase database -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"></script>
+
+  <!-- firebase database -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    import { getFirestore, doc, getDoc, updateDoc, increment, collection, query, where, getDocs, setDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
   
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBfTPjZybxTJ1Hp72U4ru0QpRYuTlv0Jqg",
+      authDomain: "fitur-like-portofolio.firebaseapp.com",
+      databaseURL: "https://fitur-like-portofolio-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "fitur-like-portofolio",
+      storageBucket: "fitur-like-portofolio.appspot.com",
+      messagingSenderId: "352307667051",
+      appId: "1:352307667051:web:600b73767fa356aaab512e"
+    };
+  
+   // Initialize Firebase
+   const app = initializeApp(firebaseConfig);
+   const db = getFirestore(app);
+   const auth = getAuth(app);
+
+   const likeButton = document.getElementById('like-button');
+   const likeCount = document.getElementById('like-count');
+
+  const postId = 'portofolio-likes';
+  const postRef = doc(db, 'posts', postId);
+
+  async function updateLikeCount(user) {
+            try {
+                console.log("Attempting to update like count...");
+                const docSnap = await getDoc(postRef);
+
+                if (docSnap.exists()) {
+                    // Cek apakah pengguna sudah memberikan like
+                    const likesRef = collection(postRef, 'likes');
+                    const userLikeQuery = query(likesRef, where('userId', '==', user.uid));
+                    const userLikeSnap = await getDocs(userLikeQuery);
+
+                    if (!userLikeSnap.empty) {
+                        console.log("User has already liked this post.");
+                        return;
+                    }
+
+                    // Tambahkan jumlah like
+                    await updateDoc(postRef, {
+                        likes: increment(1)
+                    });
+
+                    // Simpan informasi pengguna yang memberikan like
+                    await setDoc(doc(likesRef, user.uid), {
+                        userId: user.uid,
+                        timestamp: new Date()
+                    });
+
+                    // Menampilkan jumlah like yang diperbarui
+                    const updatedDocSnap = await getDoc(postRef);
+                    const updatedData = updatedDocSnap.data();
+                    likeCount.textContent = `Likes: ${updatedData.likes}`;
+                } else {
+                    console.log("Dokumen tidak ditemukan!");
+                }
+            } catch (error) {
+                console.error("Error saat memperbarui jumlah like: ", error);
+            }
+        }
+
+        async function initializeLikeCount() {
+            try {
+                console.log("Initializing like count...");
+                const docSnap = await getDoc(postRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    likeCount.textContent = `${data.likes || 0}`;
+                } else {
+                    console.log("Dokumen tidak ditemukan saat inisialisasi!");
+                }
+            } catch (error) {
+                console.error("Error saat mengambil jumlah like: ", error);
+            }
+        }
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                likeButton.addEventListener('click', () => updateLikeCount(user));
+            } else {
+                signInAnonymously(auth)
+                    .then(() => {
+                        console.log("Signed in anonymously");
+                    })
+                    .catch((error) => {
+                        console.error("Error signing in anonymously: ", error);
+                    });
+            }
+        });
+
+        initializeLikeCount();
+  </script>
+
   <!-- myjs -->
   <script src="script.js"></script>
   <!-- sweetalert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.all.min.js"></script>
+
   <script type="text/JavaScript">
     function sweetalert() {
       Swal.fire({
@@ -652,6 +764,8 @@
       window.open('file/MyResume.pdf');
     }
   </script>
+
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
