@@ -17,8 +17,8 @@
 
   <!-- sweetalert -->
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.min.css" rel="stylesheet">
-
   
+
 </head>
 <body>
     <!-- navbar -->
@@ -51,11 +51,11 @@
           </div>
         </div>
         <!-- Fitur Star -->
-        <a class="btn btn-light px-4 py-2 border-dark bi bi-star" id="like-button"> <span id="like-count">0</span></a> 
-        <a class="navbar-brand" href="https://github.com/anshoria" target="_blank"><i
-          class="bi bi-github fs-3"></i></a>
+        <a class="star btn px-4 py-2 border-dark bi bi-star" onclick="star()" id="like-button"> <span id="like-count" class="shadow">0</span></a> 
+        <audio id="clickSound" src="file/Yuji.mp4" preload="auto"></audio>
+        <a class="navbar-brand" href="https://github.com/anshoria" target="_blank"><i class="bi bi-github fs-3"></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav>
@@ -643,51 +643,59 @@
 
   <!-- firebase database -->
   <script type="module">
-    // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-    import { getFirestore, doc, getDoc, updateDoc, increment, collection, query, where, getDocs, setDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+    import { getFirestore, doc, getDoc, updateDoc, increment, collection, query, where, getDocs, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
     import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
+    
     const firebaseConfig = {
-      apiKey: "AIzaSyBfTPjZybxTJ1Hp72U4ru0QpRYuTlv0Jqg",
-      authDomain: "fitur-like-portofolio.firebaseapp.com",
-      databaseURL: "https://fitur-like-portofolio-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "fitur-like-portofolio",
-      storageBucket: "fitur-like-portofolio.appspot.com",
-      messagingSenderId: "352307667051",
-      appId: "1:352307667051:web:600b73767fa356aaab512e"
+        apiKey: "AIzaSyBfTPjZybxTJ1Hp72U4ru0QpRYuTlv0Jqg",
+        authDomain: "fitur-like-portofolio.firebaseapp.com",
+        databaseURL: "https://fitur-like-portofolio-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "fitur-like-portofolio",
+        storageBucket: "fitur-like-portofolio.appspot.com",
+        messagingSenderId: "352307667051",
+        appId: "1:352307667051:web:600b73767fa356aaab512e"
     };
-  
-   // Initialize Firebase
-   const app = initializeApp(firebaseConfig);
-   const db = getFirestore(app);
-   const auth = getAuth(app);
+    
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
 
-   const likeButton = document.getElementById('like-button');
-   const likeCount = document.getElementById('like-count');
+    const likeButton = document.getElementById('like-button');
+    const likeCount = document.getElementById('like-count');
+    
+    const postId = 'portofolio-likes';
+    const postRef = doc(db, 'posts', postId);
 
-  const postId = 'portofolio-likes';
-  const postRef = doc(db, 'posts', postId);
+    async function updateLikeCount(user) {
+        try {
+            console.log("Attempting to update like count...");
+            const docSnap = await getDoc(postRef);
 
-  async function updateLikeCount(user) {
-            try {
-                console.log("Attempting to update like count...");
-                const docSnap = await getDoc(postRef);
+            if (docSnap.exists()) {
+                // Cek apakah pengguna sudah memberikan like
+                const likesRef = collection(postRef, 'likes');
+                const userLikeQuery = query(likesRef, where('userId', '==', user.uid));
+                const userLikeSnap = await getDocs(userLikeQuery);
 
-                if (docSnap.exists()) {
-                    // Cek apakah pengguna sudah memberikan like
-                    const likesRef = collection(postRef, 'likes');
-                    const userLikeQuery = query(likesRef, where('userId', '==', user.uid));
-                    const userLikeSnap = await getDocs(userLikeQuery);
+                if (!userLikeSnap.empty) {
+                    console.log("User has already liked this post. Removing like...");
+                    
+                    // Hapus like
+                    await updateDoc(postRef, {
+                        likes: increment(-1)
+                    });
 
-                    if (!userLikeSnap.empty) {
-                        console.log("User has already liked this post.");
-                        return;
-                    }
+                    // Hapus informasi pengguna yang memberikan like
+                    await deleteDoc(doc(likesRef, user.uid));
 
+                    // Ubah ikon tombol menjadi bi-star
+                    likeButton.classList.remove('bi-star-fill');
+                    likeButton.classList.add('bi-star');
+
+                } else {
+                    console.log("User has not liked this post. Adding like...");
+                    
                     // Tambahkan jumlah like
                     await updateDoc(postRef, {
                         likes: increment(1)
@@ -699,50 +707,57 @@
                         timestamp: new Date()
                     });
 
-                    // Menampilkan jumlah like yang diperbarui
-                    const updatedDocSnap = await getDoc(postRef);
-                    const updatedData = updatedDocSnap.data();
-                    likeCount.textContent = `Likes: ${updatedData.likes}`;
-                } else {
-                    console.log("Dokumen tidak ditemukan!");
+                    // Ubah ikon tombol menjadi bi-star-fill
+                    likeButton.classList.remove('bi-star');
+                    likeButton.classList.add('bi-star-fill');
                 }
-            } catch (error) {
-                console.error("Error saat memperbarui jumlah like: ", error);
-            }
-        }
 
-        async function initializeLikeCount() {
-            try {
-                console.log("Initializing like count...");
-                const docSnap = await getDoc(postRef);
-
-                if (docSnap.exists()) {
-                    const data = docSnap.data();
-                    likeCount.textContent = `${data.likes || 0}`;
-                } else {
-                    console.log("Dokumen tidak ditemukan saat inisialisasi!");
-                }
-            } catch (error) {
-                console.error("Error saat mengambil jumlah like: ", error);
-            }
-        }
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                likeButton.addEventListener('click', () => updateLikeCount(user));
+                // Menampilkan jumlah like yang diperbarui
+                const updatedDocSnap = await getDoc(postRef);
+                const updatedData = updatedDocSnap.data();
+                likeCount.textContent = `Star: ${updatedData.likes}`;
+                
             } else {
-                signInAnonymously(auth)
-                    .then(() => {
-                        console.log("Signed in anonymously");
-                    })
-                    .catch((error) => {
-                        console.error("Error signing in anonymously: ", error);
-                    });
+                console.log("Dokumen tidak ditemukan!");
             }
-        });
+        } catch (error) {
+            console.error("Error saat memperbarui jumlah like: ", error);
+        }
+    }
 
-        initializeLikeCount();
-  </script>
+    async function initializeLikeCount() {
+        try {
+            console.log("Initializing like count...");
+            const docSnap = await getDoc(postRef);
+
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                likeCount.textContent = `Star ${data.likes || 0}`;
+            } else {
+                console.log("Dokumen tidak ditemukan saat inisialisasi!");
+            }
+        } catch (error) {
+            console.error("Error saat mengambil jumlah like: ", error);
+        }
+    }
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            likeButton.addEventListener('click', () => updateLikeCount(user));
+        } else {
+            signInAnonymously(auth)
+                .then(() => {
+                    console.log("Signed in anonymously");
+                })
+                .catch((error) => {
+                    console.error("Error signing in anonymously: ", error);
+                });
+        }
+    });
+
+    initializeLikeCount();
+</script>
+
 
   <!-- myjs -->
   <script src="script.js"></script>
@@ -750,11 +765,25 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.all.min.js"></script>
 
   <script type="text/JavaScript">
+    function star() {
+      document.getElementById('clickSound').play();
+
+      Swal.fire({
+        title: "Thankyou🙌╰(*°▽°*)╯",
+        imageUrl: "img/Yuji-Itadori-PNG.png",
+        imageWidth: 400,
+        imageHeight: 500,
+        imageAlt: "Makasi",
+        showConfirmButton: false,
+        timer: 4000
+      });
+    }
     function sweetalert() {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "Halaman web tidak tersedia!",
+        confirmButtonColor: "	#000000"
       });
     }
   </script>
