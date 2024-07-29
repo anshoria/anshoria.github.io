@@ -40,5 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+  // loader
+  const loader = document.querySelector('.loader-wrapper'); 
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 1500);
+  });
+  
 
   
