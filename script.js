@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('load', () => {
     setTimeout(() => {
       loader.style.display = 'none';
-    }, 1500);
+    }, 1200);
   });
   
 
