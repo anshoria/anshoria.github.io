@@ -8,11 +8,6 @@ body {
     background-color: white;
 }
 
-.nama {
-    font-size: 2.5rem;
-    font-weight: 500;
-}
-
 
 #hero{
     padding-top: 6rem;
@@ -29,12 +24,6 @@ body {
     padding-bottom: 12rem;
 }
 
-#skills {
-    padding-top: 6rem;
-    padding-bottom: 12rem;
-    height: 40vh;
-    background-color: black;
-}
 #contact{
     padding-top: 6rem;
     padding-bottom: 12rem;
@@ -145,6 +134,28 @@ body {
     }
 }
 /* hero */
+.hero-col {
+    padding: 2rem;
+    margin-top: 10rem;
+}
+.hero-greetings {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.hero-nama {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.hero-job {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.hero-portofolio:hover {
+    background-color: black;
+    color: white;
+}
 .foto {
     position: relative;
 }
@@ -176,6 +187,23 @@ body {
     height: 20vh;
     background-color: black;
 }
+.about-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .about-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: black;
+    margin: 10px auto 0;
+  }
 
 /* btn-preview */
 
@@ -200,6 +228,24 @@ body {
 }
 
 /* projek */
+.projects-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .projects-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: black;
+    margin: 10px auto 0;
+  }
+
 .projek-card.hidden {
     margin-top: 2rem;
 }
@@ -224,11 +270,99 @@ body {
 }
 
 /* skills */
-.skills-icon svg{
-    width: 70px;
-    height: 70px;
-    margin: 1rem;
-}
+#skills {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  
+  .skills-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .skills-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: black;
+    margin: 10px auto 0;
+  }
+  
+  .skill-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  @media (hover: hover) {
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    
+    .skill-card:hover .skill-icon {
+      transform: scale(1.1);
+    }
+  }
+  
+  .skill-icon {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .skill-name {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+  }
+  
+  .laravel { color: #FF2D20; }
+  .php { color: #777BB4; }
+  .bootstrap { color: #7952B3; }
+  .figma { color: #F24E1E; }
+  .canva { 
+    background: linear-gradient(135deg, #00C4CC 0%, #7D2AE8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .canva-icon {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  /* contact */
+  .contact-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .contact-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: black;
+    margin: 10px auto 0;
+  }
 
 
 /* media queries */
@@ -247,11 +381,6 @@ body {
     #projects {
         padding-top: 4rem;
         padding-bottom: 2rem;
-    }
-    #skills{
-        padding-top: 2rem;
-        padding-bottom: 0;
-        height: 20vh;
     }
     #contact {
         padding-top: 4rem;
@@ -275,15 +404,34 @@ body {
     .hero-col {
         padding-top: 10px !important;
     }
+    .hero-greetings {
+        font-size: 1.1rem !important;
+        display: flex;
+        justify-content: center;
+    }
+    .hero-nama {
+        font-size: 1.5rem !important;
+        display: flex;
+        justify-content: center;
+    }
+    .hero-job {
+        font-size: 1.1rem !important;
+        display: flex;
+        justify-content: center;
+    }
+    .hero-col {
+        margin-top: 10px !important;
+    }
     .hero-col p {
         font-size: 1.1rem !important;
         display: flex;
         justify-content: center;
     }
     .hero-col h2 {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
         display: flex;
         justify-content: center;
+        margin: 0px !important;
     }
     .hero-button {
         display: flex;
@@ -363,23 +511,20 @@ body {
     }
 
     /* skills */
-    .skills-icon {
-        margin-top: 20px !important;
-    }
-    .skills-icon svg {
-        width: 40px;
-        height: 40px;
-        margin: 0.5rem;
+    .skill-card {
+        padding: 15px;
+      }
+      
+      .skill-icon {
+        margin-bottom: 10px;
+      }
+
+    /* contact */
+    .card-contact {
+        padding: 30px !important;
     }
     /* footer */
     .footer-p {
         font-size: 0.8rem !important;
     }
-}
-
-@media only screen and (min-width: 769px) and (max-width: 992px) {
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1400px){
-
 }
