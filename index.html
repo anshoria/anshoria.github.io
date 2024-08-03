@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>anshoria</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- my style -->
+    <link rel="stylesheet" href="style.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>anshoria</title>
-  <link rel="icon" type="image/png" href="img/logo.png">
-  <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- my style -->
-  <link rel="stylesheet" href="style.css">
+    <!-- bootstrap icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-  <!-- bootstrap icon -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- sweetalert -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- sweetalert -->
-  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- aos animasi -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <!-- aos animasi -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-
-<body>
+  <body>
     <!-- loader -->
     <div class="loader-wrapper">
       <div class="loader-container">
@@ -33,7 +45,8 @@
           <div></div>
           <div></div>
         </div>
-      </div><div class="loader-container">
+      </div>
+      <div class="loader-container">
         <div class="loader">
           <div></div>
           <div></div>
@@ -42,18 +55,33 @@
       </div>
     </div>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top"> 
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand me-auto" href="#">anshoria.</a>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">anshoria.</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link mx-lg-2 active" aria-current="page" href="#hero">Home</a>
+                <a
+                  class="nav-link mx-lg-2 active"
+                  aria-current="page"
+                  href="#hero"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link mx-lg-2" href="#about">About</a>
@@ -71,227 +99,477 @@
           </div>
         </div>
         <!-- Fitur Star -->
-        <a class="btn px-4 py-2 border-dark bi bi-star" onclick="star()" id="like-button"> <span id="like-count">0</span></a> 
+        <a
+          class="btn px-4 py-2 border-dark bi bi-star btn-sm"
+          onclick="star()"
+          id="like-button"
+        >
+          <span id="like-count">0</span></a
+        >
         <audio id="clickSound" src="file/Yuji.mp4" preload="auto"></audio>
-        <a class="navbar-brand" href="https://github.com/anshoria" target="_blank"><i class="bi bi-github fs-3"></i></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <a
+          class="navbar-brand"
+          href="https://github.com/anshoria"
+          target="_blank"
+          ><i class="bi bi-github fs-3"></i
+        ></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav>
 
-  <!-- hero -->
-  <section style="background: linear-gradient(to top, #ffffff 0%, #c3cfe2 30%, #ffffff 100%);">
-    <div class="container" id="hero">
-      <div class="hero-row row flex-lg-row-reverse d-flex align-items-center">
-        <div class="foto col-sm-12 col-lg-6" data-aos="zoom-in" data-aos-delay="1000">
-          <span class="blob">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#000000"
-                d="M40.4,-49.4C53.9,-45.7,67.5,-36.1,67.7,-24.6C67.8,-13.1,54.4,0.1,50.5,17.8C46.6,35.4,52.3,57.5,45.4,62.1C38.6,66.7,19.3,53.7,0.7,52.7C-17.8,51.7,-35.6,62.6,-45.5,59C-55.3,55.4,-57.2,37.3,-59.7,21.3C-62.1,5.4,-65.2,-8.4,-58.3,-15.6C-51.3,-22.7,-34.3,-23.2,-22.9,-27.5C-11.5,-31.9,-5.7,-40,3.8,-45.3C13.4,-50.6,26.8,-53,40.4,-49.4Z"
-                transform="translate(100 100)" />
-            </svg>
-          </span>
-          <img src="img/hero1.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="600"
-            loading="lazy">
-        </div>
-        <div class="hero-col col-lg-6">
-          <div class="hero-text">
-            <p class="hero-greetings" data-aos="fade-down"  data-aos-delay="1000">Halo semua 👋</p>
-            <h2 class="hero-nama" data-aos="fade-down"  data-aos-delay="1050">MUHAMMAD ANSHORI AKBAR</h2>
-            <p class="hero-job text-secondary" data-aos="fade-down"  data-aos-delay="1100">Web Developer & UI/UX Designer</p>
+    <!-- hero -->
+    <section
+      style="
+        background: linear-gradient(
+          to top,
+          #ffffff 0%,
+          #c3cfe2 30%,
+          #ffffff 100%
+        );
+      "
+    >
+      <div class="container" id="hero">
+        <div class="hero-row row flex-lg-row-reverse d-flex align-items-center">
+          <div
+            class="foto col-sm-12 col-lg-6"
+            data-aos="zoom-in"
+            data-aos-delay="1000"
+          >
+            <span class="blob">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill="#000000"
+                  d="M40.4,-49.4C53.9,-45.7,67.5,-36.1,67.7,-24.6C67.8,-13.1,54.4,0.1,50.5,17.8C46.6,35.4,52.3,57.5,45.4,62.1C38.6,66.7,19.3,53.7,0.7,52.7C-17.8,51.7,-35.6,62.6,-45.5,59C-55.3,55.4,-57.2,37.3,-59.7,21.3C-62.1,5.4,-65.2,-8.4,-58.3,-15.6C-51.3,-22.7,-34.3,-23.2,-22.9,-27.5C-11.5,-31.9,-5.7,-40,3.8,-45.3C13.4,-50.6,26.8,-53,40.4,-49.4Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
+            </span>
+            <img
+              src="img/hero1.png"
+              class="d-block mx-lg-auto img-fluid"
+              alt="Bootstrap Themes"
+              width="600"
+              loading="lazy"
+            />
           </div>
-          <div class="hero-button" data-aos="fade-down"  data-aos-delay="1150">
-            <a href="https://wa.me/+6281254402608" class="btn btn-dark px-4 py-2" target="_blank">Hubungi saya</a>
-            <a href="#projects" class="hero-portofolio btn border-dark px-4 py-2 ms-2">Lihat Portofolio</a>
+          <div class="hero-col col-lg-6">
+            <div class="hero-text">
+              <p
+                class="hero-greetings"
+                data-aos="fade-down"
+                data-aos-delay="1000"
+              >
+                Halo semua 👋
+              </p>
+              <h2 class="hero-nama" data-aos="fade-down" data-aos-delay="1050">
+                MUHAMMAD ANSHORI AKBAR
+              </h2>
+              <p
+                class="hero-job text-secondary"
+                data-aos="fade-down"
+                data-aos-delay="1100"
+              >
+                Web Developer & UI/UX Designer
+              </p>
+            </div>
+            <div class="hero-button" data-aos="fade-down" data-aos-delay="1150">
+              <a
+                href="https://wa.me/+6281254402608"
+                class="btn btn-dark px-4 py-2"
+                target="_blank"
+                >Hubungi saya</a
+              >
+              <a
+                href="#projects"
+                class="hero-portofolio btn border-dark px-4 py-2 ms-2"
+                >Lihat Portofolio</a
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- about -->
-  <section class="container" id="about" data-aos="fade-down">
-    <h2 class="text-center about-title">About Me</h2>
-    <div class="about-row row mt-5">
-      <div class="about-col col-sm-12 col-md-12 col-lg-5 col-xl-5">
-        <img src="img/ABOUTME2.JPG" class="img-about img-thumbnail" width="500px" alt="">
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7 mt-4">
-        <h2 class="about-h2" style="font-family: Montserrat;">Who Am I</h2>
-        <p class="about-p fs-5 mt-3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Saya adalah freshgraduate lulusan teknologi informasi di Universitas Muhammadiyah Yogyakarta (UMY). Saya mampu bekerja secara individu maupun berkolaborasi dengan tim,
-          bekerja dengan cepat, Up to Date terhadapap perkembangan teknologi informasi. Saya memiliki passion dan dedikasi tinggi dalam bidang pengembangan dan desain web. Dengan keterampilan dalam HTML, CSS, JavaScript, serta keahlian dalam berbagai framework dan alat desain modern, saya siap menciptakan solusi web yang tidak hanya fungsional tapi juga estetis. Saya bersemangat untuk terus belajar dan berkontribusi dalam dunia web development dan design.
-        </p>
-        <hr class="about-hr my-4">
-        <div class="row">
-          <div class="row-col col-sm-12 col-lg-6">
-            <p class="mb-1"><b>Nama</b> Muhammad Anshori Akbar</p>
-            <p class="row-p"><b>Umur</b> 23 Tahun</p>
+    <!-- about -->
+    <section class="container" id="about" data-aos="fade-down">
+      <h2 class="text-center about-title">About Me</h2>
+      <div class="about-row row mt-5">
+        <div class="about-col col-sm-12 col-md-12 col-lg-5 col-xl-5">
+          <img
+            src="img/ABOUTME2.JPG"
+            class="img-about img-thumbnail"
+            width="500px"
+            alt=""
+          />
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-7 col-xl-7 mt-4">
+          <h2 class="about-h2" style="font-family: Montserrat">Who Am I</h2>
+          <p
+            class="about-p fs-5 mt-3"
+            style="font-family: Georgia, 'Times New Roman', Times, serif"
+          >
+            Saya adalah freshgraduate lulusan teknologi informasi di Universitas
+            Muhammadiyah Yogyakarta (UMY). Saya mampu bekerja secara individu
+            maupun berkolaborasi dengan tim, bekerja dengan cepat, Up to Date
+            terhadap perkembangan teknologi informasi. Saya memiliki passion dan
+            dedikasi tinggi dalam bidang pengembangan dan desain web. Dengan
+            keterampilan dalam HTML, CSS, JavaScript, serta keahlian dalam
+            berbagai framework dan alat desain modern, saya siap menciptakan
+            solusi web yang tidak hanya fungsional tapi juga estetis. Saya
+            bersemangat untuk terus belajar dan berkontribusi dalam dunia web
+            development dan design.
+          </p>
+          <hr class="about-hr my-4" />
+          <div class="row">
+            <div class="row-col col-sm-12 col-lg-6">
+              <p class="mb-1"><b>Nama</b> Muhammad Anshori Akbar</p>
+              <p class="row-p"><b>Umur</b> 23 Tahun</p>
+            </div>
+            <div class="row-col col-sm-12 col-lg-6">
+              <p class="mb-1"><b>Asal</b> Kutai Timur, Kalimantan Timur</p>
+              <p><b>Email</b> anshoria.forwork@gmail.com</p>
+            </div>
           </div>
-          <div class="row-col col-sm-12 col-lg-6">
-            <p class="mb-1"><b>Asal</b> Kutai Timur, Kalimantan Timur</p>
-            <p><b>Email</b> anshoria.forwork@gmail.com</p>
+          <div class="about-a">
+            <a
+              class="btn btn-dark mt-2 px-4 py-2"
+              onclick="PrintPDF()"
+              target="_blank"
+              >My Resume</a
+            >
           </div>
-        </div> 
-        <div class="about-a">
-          <a class="btn btn-dark mt-2 px-4 py-2" onclick="PrintPDF()" target="_blank">My Resume</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- projects -->
-  <section class="container" id="projects" data-aos="fade-down">
-    <h2 class="text-center projects-title">My Projects</h2>
-    <!-- card -->
-    <div class="projek-card row mt-5" style="padding-left: 7.5rem; padding-right: 7.5rem;">
-      <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4" data-aos="flip-left">
-        <div class="card" style="width: 20rem;">
-          <img src="img/Projek-Silvergym.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Sistem Informasi Silver Gym</h5>
-            <div class="mb-2">
-              <span class="badge rounded-pill text-bg-secondary">Laravel</span>
-              <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
-            </div>
-            <p class="card-text">Sistem Informasi Silver Gym adalah web yang dibangun untuk memanajemen member.</p>
-            <div class="pt-2">
-              <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal1">Detail</a>
-              <a href="https://silvergymbantul.000webhostapp.com/" target="_blank" class="btn border-dark border-1"
-                id="btn-preview">Preview</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4" data-aos="flip-left">
-        <div class="card" style="width: 20rem;">
-          <img src="img/Projek-KPPN.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Menu Internal KPPNY</h5>
-            <div class="mb-2">
-              <span class="badge rounded-pill text-bg-secondary">PHP Native</span>
-              <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
-            </div>
-            <p class="card-text">Menu Internal KPPNY adalah website untuk mengelola urusan internal kantor.</p>
-            <div class="pt-2">
-              <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal2">Detail</a>
-              <a href="https://internal.kppnjogja.id/" target="_blank" class="btn border-dark border-1" id="btn-preview">Preview</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4" data-aos="flip-left">
-        <div class="card" style="width: 20rem;">
-          <img src="img/Projek-Dayang.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Dashboard Dayang Express</h5>
-            <div class="mb-2">
-              <span class="badge rounded-pill text-bg-secondary">PHP Native</span>
-              <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
-            </div>
-            <p class="card-text">Dashboard Dayang Express digunakan untuk mengelola urusan pengiriman barang Dayang Express.</p>
-            <div class="pt-2">
-              <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal3">Detail</a>
-              <a class="btn border-dark border-1" id="btn-preview" onclick="sweetalert()">Preview</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- hidden projek -->
-    <div id="collapseExample" class="collapse">
-      <div class="projek-card hidden row" style="padding-left: 7.5rem; padding-right: 7.5rem;">
-        <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4">
-          <div class="card" style="width: 20rem;">
-            <img src="img/Projek-StopMerokok.png" class="card-img-top" alt="...">
+    <!-- projects -->
+    <section class="container" id="projects" data-aos="fade-down">
+      <h2 class="text-center projects-title">My Projects</h2>
+      <!-- card -->
+      <div
+        class="projek-card row mt-5"
+        style="padding-left: 7.5rem; padding-right: 7.5rem"
+      >
+        <div
+          class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4"
+          data-aos="flip-left"
+        >
+          <div class="card" style="width: 20rem">
+            <img
+              src="img/Projek-Silvergym.png"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
-              <h5 class="card-title">Stop Merokok</h5>
+              <h5 class="card-title">Sistem Informasi Silver Gym</h5>
               <div class="mb-2">
-                <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+                <span class="badge rounded-pill text-bg-secondary"
+                  >Laravel</span
+                >
+                <span class="badge rounded-pill text-bg-secondary"
+                  >Bootstrap</span
+                >
               </div>
-              <p class="card-text">Stop Merokok adalah website persuasif untuk mengajak para perokok untuk berhenti merokok.</p>
+              <p class="card-text">
+                Sistem Informasi Silver Gym adalah web yang dibangun untuk
+                memanajemen member.
+              </p>
               <div class="pt-2">
-                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal4">Detail</a>
-                <a href="https://stop-merokok-b9c8c.web.app/" target="_blank" class="btn border-dark border-1" id="btn-preview">Preview</a>
+                <a
+                  href="#"
+                  class="btn btn-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal1"
+                  >Detail</a
+                >
+                <a
+                  href="https://silvergymbantul.000webhostapp.com/"
+                  target="_blank"
+                  class="btn border-dark border-1"
+                  id="btn-preview"
+                  >Preview</a
+                >
               </div>
             </div>
           </div>
         </div>
-        <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4">
-          <div class="card" style="width: 20rem;">
-            <img src="img/Projek-Wisata.png" class="card-img-top" alt="...">
+        <div
+          class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4"
+          data-aos="flip-left"
+        >
+          <div class="card" style="width: 20rem">
+            <img src="img/Projek-KPPN.png" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Pemesanan Tiket Wisata</h5>
+              <h5 class="card-title">Menu Internal KPPNY</h5>
               <div class="mb-2">
-                <span class="badge rounded-pill text-bg-secondary">PHP Native</span>
-                <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+                <span class="badge rounded-pill text-bg-secondary"
+                  >PHP Native</span
+                >
+                <span class="badge rounded-pill text-bg-secondary"
+                  >Bootstrap</span
+                >
               </div>
-              <p class="card-text">Web ini berisi informasi tentang cara memesan tiket wisata melalui form pemesanan.</p>
+              <p class="card-text">
+                Menu Internal KPPNY adalah website untuk mengelola urusan
+                internal kantor.
+              </p>
               <div class="pt-2">
-                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal5">Detail</a>
-                <a class="btn border-dark border-1" id="btn-preview" onclick="sweetalert()">Preview</a>
+                <a
+                  href="#"
+                  class="btn btn-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal2"
+                  >Detail</a
+                >
+                <a
+                  href="https://internal.kppnjogja.id/"
+                  target="_blank"
+                  class="btn border-dark border-1"
+                  id="btn-preview"
+                  >Preview</a
+                >
               </div>
             </div>
           </div>
         </div>
-        <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4">
-          <div class="card" style="width: 20rem;">
-            <img src="img/Projek-Beasiswa.png" class="card-img-top" alt="...">
+        <div
+          class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4"
+          data-aos="flip-left"
+        >
+          <div class="card" style="width: 20rem">
+            <img src="img/Projek-Dayang.png" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Beasiswa Pendidikan</h5>
+              <h5 class="card-title">Dashboard Dayang Express</h5>
               <div class="mb-2">
-                <span class="badge rounded-pill text-bg-secondary">PHP Native</span>
-                <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+                <span class="badge rounded-pill text-bg-secondary"
+                  >PHP Native</span
+                >
+                <span class="badge rounded-pill text-bg-secondary"
+                  >Bootstrap</span
+                >
               </div>
-              <p class="card-text">Web ini berisi informasi tentang beasiswa pendidikan dan pendaftaran beasiswa pendidikan</p>
+              <p class="card-text">
+                Dashboard Dayang Express digunakan untuk mengelola urusan
+                pengiriman barang Dayang Express.
+              </p>
               <div class="pt-2">
-                <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal6">Detail</a>
-                <a class="btn border-dark border-1" id="btn-preview" onclick="sweetalert()">Preview</a>
+                <a
+                  href="#"
+                  class="btn btn-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal3"
+                  >Detail</a
+                >
+                <a
+                  class="btn border-dark border-1"
+                  id="btn-preview"
+                  onclick="sweetalert()"
+                  >Preview</a
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="projek-button text-center mt-5">
-        <button class="btn btn-dark px-4 py-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <!-- hidden projek -->
+      <div id="collapseExample" class="collapse">
+        <div
+          class="projek-card hidden row"
+          style="padding-left: 7.5rem; padding-right: 7.5rem"
+        >
+          <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4">
+            <div class="card" style="width: 20rem">
+              <img
+                src="img/Projek-StopMerokok.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Stop Merokok</h5>
+                <div class="mb-2">
+                  <span class="badge rounded-pill text-bg-secondary"
+                    >Bootstrap</span
+                  >
+                </div>
+                <p class="card-text">
+                  Stop Merokok adalah website persuasif untuk mengajak para
+                  perokok untuk berhenti merokok.
+                </p>
+                <div class="pt-2">
+                  <a
+                    href="#"
+                    class="btn btn-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal4"
+                    >Detail</a
+                  >
+                  <a
+                    href="https://stop-merokok-b9c8c.web.app/"
+                    target="_blank"
+                    class="btn border-dark border-1"
+                    id="btn-preview"
+                    >Preview</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4">
+            <div class="card" style="width: 20rem">
+              <img src="img/Projek-Wisata.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Pemesanan Tiket Wisata</h5>
+                <div class="mb-2">
+                  <span class="badge rounded-pill text-bg-secondary"
+                    >PHP Native</span
+                  >
+                  <span class="badge rounded-pill text-bg-secondary"
+                    >Bootstrap</span
+                  >
+                </div>
+                <p class="card-text">
+                  Web ini berisi informasi tentang cara memesan tiket wisata
+                  melalui form pemesanan.
+                </p>
+                <div class="pt-2">
+                  <a
+                    href="#"
+                    class="btn btn-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal5"
+                    >Detail</a
+                  >
+                  <a
+                    class="btn border-dark border-1"
+                    id="btn-preview"
+                    onclick="sweetalert()"
+                    >Preview</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4">
+            <div class="card" style="width: 20rem">
+              <img
+                src="img/Projek-Beasiswa.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Beasiswa Pendidikan</h5>
+                <div class="mb-2">
+                  <span class="badge rounded-pill text-bg-secondary"
+                    >PHP Native</span
+                  >
+                  <span class="badge rounded-pill text-bg-secondary"
+                    >Bootstrap</span
+                  >
+                </div>
+                <p class="card-text">
+                  Web ini berisi informasi tentang beasiswa pendidikan dan
+                  pendaftaran beasiswa pendidikan
+                </p>
+                <div class="pt-2">
+                  <a
+                    href="#"
+                    class="btn btn-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal6"
+                    >Detail</a
+                  >
+                  <a
+                    class="btn border-dark border-1"
+                    id="btn-preview"
+                    onclick="sweetalert()"
+                    >Preview</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="projek-button text-center mt-5">
+        <button
+          class="btn btn-dark px-4 py-2"
+          data-bs-toggle="collapse"
+          href="#collapseExample"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
           View all projects <i class="bi bi-arrow-right-circle"></i>
         </button>
-    </div>
-    
-    <!-- modal 1 -->
-    <div class="modal fade" id="modal1" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="cover">
-            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cover">
-          </div>
-          <div class="icon">
-            <i class="bi bi-laptop-fill text-success"></i>
-          </div>
-          <div class="modal-body mt-4 pb-5">
+      </div>
+
+      <!-- modal 1 -->
+      <div
+        class="modal fade"
+        id="modal1"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="cover">
+              <img
+                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="cover"
+              />
+            </div>
+            <div class="icon">
+              <i class="bi bi-laptop-fill text-success"></i>
+            </div>
+            <div class="modal-body mt-4 pb-5">
               <h1 class="modal-title fs-1">Sistem Informasi Silver Gym</h1>
               <span class="badge rounded-pill text-bg-secondary">Laravel</span>
-              <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+              <span class="badge rounded-pill text-bg-secondary"
+                >Bootstrap</span
+              >
               <!-- content -->
               <div class="content mt-5">
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary"> Project Overview</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Project Overview
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <p class="modal-p">Sistem Informasi Silver Gym adalah web yang dibangun untuk memanajemen member Silver Gym.</p>
+                    <p class="modal-p">
+                      Sistem Informasi Silver Gym adalah web yang dibangun untuk
+                      memanajemen member Silver Gym.
+                    </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label  bi bi-caret-down-square text-secondary"> Category</div>
+                    <div
+                      class="modal-label bi bi-caret-down-square text-secondary"
+                    >
+                      Category
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Web</p>
@@ -299,7 +577,9 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label  bi bi-list-ul text-secondary"> My Role</div>
+                    <div class="modal-label bi bi-list-ul text-secondary">
+                      My Role
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Full-Stack Developer</p>
@@ -307,49 +587,85 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary">Link Website</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Link Website
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <a href="https://silvergymbantul.000webhostapp.com/" class="modal-p text-secondary">silvergymbantul.com</a>
+                    <a
+                      href="https://silvergymbantul.000webhostapp.com/"
+                      class="modal-p text-secondary"
+                      >silvergymbantul.com</a
+                    >
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- modal 2 -->
-    <div class="modal fade" id="modal2" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="cover">
-            <img src="https://images.unsplash.com/photo-1488866022504-f2584929ca5f?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cover">
-          </div>
-          <div class="icon">
-            <i class="bi bi-laptop-fill text-success"></i>
-          </div>
-          <div class="modal-body mt-4 pb-5">
+      <!-- modal 2 -->
+      <div
+        class="modal fade"
+        id="modal2"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="cover">
+              <img
+                src="https://images.unsplash.com/photo-1488866022504-f2584929ca5f?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="cover"
+              />
+            </div>
+            <div class="icon">
+              <i class="bi bi-laptop-fill text-success"></i>
+            </div>
+            <div class="modal-body mt-4 pb-5">
               <h1 class="modal-title fs-1">Menu Internal KPPN Yogyakarta</h1>
-              <span class="badge rounded-pill text-bg-secondary">Php Native</span>
-              <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+              <span class="badge rounded-pill text-bg-secondary"
+                >Php Native</span
+              >
+              <span class="badge rounded-pill text-bg-secondary"
+                >Bootstrap</span
+              >
               <!-- content -->
               <div class="content mt-5">
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary"> Project Overview</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Project Overview
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <p class="modal-p">Menu internal KPPN Yogyakarta adalah website yang digunakan oleh internal kantor atau karyawan-karyawan KPPNY untuk mengelola urusan internal kantor seperti perizinan karyawan, Kuisioner, Laporan Kinerja dan lain-lain.</p>
+                    <p class="modal-p">
+                      Menu internal KPPN Yogyakarta adalah website yang
+                      digunakan oleh internal kantor atau karyawan-karyawan
+                      KPPNY untuk mengelola urusan internal kantor seperti
+                      perizinan karyawan, Kuisioner, Laporan Kinerja dan
+                      lain-lain.
+                    </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-caret-down-square text-secondary"> Category</div>
+                    <div
+                      class="modal-label bi bi-caret-down-square text-secondary"
+                    >
+                      Category
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Web</p>
@@ -357,7 +673,9 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-list-ul text-secondary"> My Role</div>
+                    <div class="modal-label bi bi-list-ul text-secondary">
+                      My Role
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Back-End Developer</p>
@@ -365,49 +683,85 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary">Link Website</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Link Website
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <a href="https://internal.kppnjogja.id/" class="modal-p text-secondary">https://internal.kppnjogja.id/</a>
+                    <a
+                      href="https://internal.kppnjogja.id/"
+                      class="modal-p text-secondary"
+                      >https://internal.kppnjogja.id/</a
+                    >
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- modal 3 -->
-    <div class="modal fade" id="modal3" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="cover">
-            <img src="https://images.unsplash.com/photo-1570586437263-ab629fccc818?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cover">
-          </div>
-          <div class="icon">
-            <i class="bi bi-laptop-fill text-success"></i>
-          </div>
-          <div class="modal-body mt-4 pb-5">
+      <!-- modal 3 -->
+      <div
+        class="modal fade"
+        id="modal3"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="cover">
+              <img
+                src="https://images.unsplash.com/photo-1570586437263-ab629fccc818?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="cover"
+              />
+            </div>
+            <div class="icon">
+              <i class="bi bi-laptop-fill text-success"></i>
+            </div>
+            <div class="modal-body mt-4 pb-5">
               <h1 class="modal-title fs-1">Dashboard Dayang Express</h1>
-              <span class="badge rounded-pill text-bg-secondary">Php Native</span>
-              <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+              <span class="badge rounded-pill text-bg-secondary"
+                >Php Native</span
+              >
+              <span class="badge rounded-pill text-bg-secondary"
+                >Bootstrap</span
+              >
               <!-- content -->
               <div class="content mt-5">
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary"> Project Overview</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Project Overview
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <p class="modal-p">Dashboard Dayang Express adalah website yang digunakan untk mengelola pengiriman barang oleh Dayang Express. Mulai dari kedatangan barang dan pengiriman barang. Ada juga menu untuk mengelola data pelanggan, data supir dan menu laporan. </p>
+                    <p class="modal-p">
+                      Dashboard Dayang Express adalah website yang digunakan
+                      untk mengelola pengiriman barang oleh Dayang Express.
+                      Mulai dari kedatangan barang dan pengiriman barang. Ada
+                      juga menu untuk mengelola data pelanggan, data supir dan
+                      menu laporan.
+                    </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-caret-down-square text-secondary"> Category</div>
+                    <div
+                      class="modal-label bi bi-caret-down-square text-secondary"
+                    >
+                      Category
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Web</p>
@@ -415,7 +769,9 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-list-ul text-secondary"> My Role</div>
+                    <div class="modal-label bi bi-list-ul text-secondary">
+                      My Role
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Full-Stack Developer</p>
@@ -423,48 +779,79 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary">Link Website</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Link Website
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <a href="dayangexpress.com" class=" modal-p text-secondary">dayangexpress.com</a>
+                    <a href="dayangexpress.com" class="modal-p text-secondary"
+                      >dayangexpress.com</a
+                    >
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- modal 4 -->
-    <div class="modal fade" id="modal4" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="cover">
-            <img src="https://images.unsplash.com/photo-1529641484336-ef35148bab06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cover">
-          </div>
-          <div class="icon">
-            <i class="bi bi-laptop-fill text-success"></i>
-          </div>
-          <div class="modal-body mt-4 pb-5">
+      <!-- modal 4 -->
+      <div
+        class="modal fade"
+        id="modal4"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="cover">
+              <img
+                src="https://images.unsplash.com/photo-1529641484336-ef35148bab06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="cover"
+              />
+            </div>
+            <div class="icon">
+              <i class="bi bi-laptop-fill text-success"></i>
+            </div>
+            <div class="modal-body mt-4 pb-5">
               <h1 class="modal-title fs-1">Stop Merokok</h1>
-              <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+              <span class="badge rounded-pill text-bg-secondary"
+                >Bootstrap</span
+              >
               <!-- content -->
               <div class="content mt-5">
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary"> Project Overview</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Project Overview
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <p class="modal-p">Stop Merokok adalah website persuasif untuk mengajak para perokok untuk berhenti merokok melalui seputar informasi mengenai rokok seperti dampak rokok bagi kesehatan dan tips berhenti merokok. </p>
+                    <p class="modal-p">
+                      Stop Merokok adalah website persuasif untuk mengajak para
+                      perokok untuk berhenti merokok melalui seputar informasi
+                      mengenai rokok seperti dampak rokok bagi kesehatan dan
+                      tips berhenti merokok.
+                    </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-caret-down-square text-secondary"> Category</div>
+                    <div
+                      class="modal-label bi bi-caret-down-square text-secondary"
+                    >
+                      Category
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Web</p>
@@ -472,7 +859,9 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-list-ul text-secondary"> My Role</div>
+                    <div class="modal-label bi bi-list-ul text-secondary">
+                      My Role
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Designer</p>
@@ -480,49 +869,84 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary">Link Website</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Link Website
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <a href="https://stop-merokok-b9c8c.web.app/" class="modal-p text-secondary">stop-merokok</a>
+                    <a
+                      href="https://stop-merokok-b9c8c.web.app/"
+                      class="modal-p text-secondary"
+                      >stop-merokok</a
+                    >
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- modal 5 -->
-    <div class="modal fade" id="modal5" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="cover">
-            <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cover">
-          </div>
-          <div class="icon">
-            <i class="bi bi-laptop-fill text-success"></i>
-          </div>
-          <div class="modal-body mt-4 pb-5">
+      <!-- modal 5 -->
+      <div
+        class="modal fade"
+        id="modal5"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="cover">
+              <img
+                src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="cover"
+              />
+            </div>
+            <div class="icon">
+              <i class="bi bi-laptop-fill text-success"></i>
+            </div>
+            <div class="modal-body mt-4 pb-5">
               <h1 class="modal-title fs-1">Pememsanan Tiket Wisata</h1>
-              <span class="badge rounded-pill text-bg-secondary">PHP Native</span>
-              <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+              <span class="badge rounded-pill text-bg-secondary"
+                >PHP Native</span
+              >
+              <span class="badge rounded-pill text-bg-secondary"
+                >Bootstrap</span
+              >
               <!-- content -->
               <div class="content mt-5">
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary"> Project Overview</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Project Overview
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <p class="modal-p">Projek ini saya buat dalam ujian sertifikasi BNSP. Projek ini adalah projek sederhana tentang pememsanan tiket wisata melalui form pemesanan dan menampilkan daftar pemesanan pada tabel. </p>
+                    <p class="modal-p">
+                      Projek ini saya buat dalam ujian sertifikasi BNSP. Projek
+                      ini adalah projek sederhana tentang pememsanan tiket
+                      wisata melalui form pemesanan dan menampilkan daftar
+                      pemesanan pada tabel.
+                    </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-caret-down-square text-secondary"> Category</div>
+                    <div
+                      class="modal-label bi bi-caret-down-square text-secondary"
+                    >
+                      Category
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Web</p>
@@ -530,7 +954,9 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-list-ul text-secondary"> My Role</div>
+                    <div class="modal-label bi bi-list-ul text-secondary">
+                      My Role
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Full-Stack</p>
@@ -538,49 +964,82 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary">Link Website</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Link Website
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <a class="modal-p text-secondary text-decoration-none"><i>Tidak tersedia</i></a>
+                    <a class="modal-p text-secondary text-decoration-none"
+                      ><i>Tidak tersedia</i></a
+                    >
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- modal 6 -->
-    <div class="modal fade" id="modal6" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="cover">
-            <img src="https://images.unsplash.com/photo-1533854775446-95c4609da544?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cover">
-          </div>
-          <div class="icon">
-            <i class="bi bi-laptop-fill text-success"></i>
-          </div>
-          <div class="modal-body mt-4 pb-5">
+      <!-- modal 6 -->
+      <div
+        class="modal fade"
+        id="modal6"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="cover">
+              <img
+                src="https://images.unsplash.com/photo-1533854775446-95c4609da544?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="cover"
+              />
+            </div>
+            <div class="icon">
+              <i class="bi bi-laptop-fill text-success"></i>
+            </div>
+            <div class="modal-body mt-4 pb-5">
               <h1 class="modal-title fs-1">Beasiswa Pendidikan</h1>
-              <span class="badge rounded-pill text-bg-secondary">PHP Native</span>
-              <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+              <span class="badge rounded-pill text-bg-secondary"
+                >PHP Native</span
+              >
+              <span class="badge rounded-pill text-bg-secondary"
+                >Bootstrap</span
+              >
               <!-- content -->
               <div class="content mt-5">
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary"> Project Overview</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Project Overview
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <p class="modal-p">Sama seperti pemesanan tiket wisata Projek ini saya buat dalam ujian sertifikasi BNSP. Projek ini adalah projek sederhana tentang pememsanan tiket wisata melalui form pemesanan dan menampilkan daftar pemesanan pada tabel. </p>
+                    <p class="modal-p">
+                      Sama seperti pemesanan tiket wisata Projek ini saya buat
+                      dalam ujian sertifikasi BNSP. Projek ini adalah projek
+                      sederhana tentang pememsanan tiket wisata melalui form
+                      pemesanan dan menampilkan daftar pemesanan pada tabel.
+                    </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-caret-down-square text-secondary"> Category</div>
+                    <div
+                      class="modal-label bi bi-caret-down-square text-secondary"
+                    >
+                      Category
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Web</p>
@@ -588,7 +1047,9 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-list-ul text-secondary"> My Role</div>
+                    <div class="modal-label bi bi-list-ul text-secondary">
+                      My Role
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">Full-Stack</p>
@@ -596,280 +1057,353 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-lg-3">
-                    <div class="modal-label bi bi-justify-left text-secondary">Link Website</div>
+                    <div class="modal-label bi bi-justify-left text-secondary">
+                      Link Website
+                    </div>
                   </div>
                   <div class="col-sm-12 col-lg-9">
-                    <a class="modal-p text-secondary text-decoration-none"><i>Tidak tersedia</i></a>
+                    <a class="modal-p text-secondary text-decoration-none"
+                      ><i>Tidak tersedia</i></a
+                    >
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- skills -->
-  <section id="skills" class="py-5" data-aos="fade-down">
-    <div class="container">
-      <h2 class="text-center mb-5 skills-title">My Skills</h2>
-      <div class="row justify-content-center">
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-          <div class="skill-card">
-            <div class="skill-icon laravel">
-              <i class="fab fa-laravel"></i>
+    <!-- skills -->
+    <section id="skills" class="py-5" data-aos="fade-down">
+      <div class="container">
+        <h2 class="text-center mb-5 skills-title">My Skills</h2>
+        <div class="row justify-content-center">
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+            <div class="skill-card">
+              <div class="skill-icon laravel">
+                <i class="fab fa-laravel"></i>
+              </div>
+              <h5 class="skill-name">Laravel</h5>
             </div>
-            <h5 class="skill-name">Laravel</h5>
           </div>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-          <div class="skill-card">
-            <div class="skill-icon php">
-              <i class="fab fa-php"></i>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+            <div class="skill-card">
+              <div class="skill-icon php">
+                <i class="fab fa-php"></i>
+              </div>
+              <h5 class="skill-name">PHP</h5>
             </div>
-            <h5 class="skill-name">PHP</h5>
           </div>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-          <div class="skill-card">
-            <div class="skill-icon bootstrap">
-              <i class="fab fa-bootstrap"></i>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+            <div class="skill-card">
+              <div class="skill-icon bootstrap">
+                <i class="fab fa-bootstrap"></i>
+              </div>
+              <h5 class="skill-name">Bootstrap</h5>
             </div>
-            <h5 class="skill-name">Bootstrap</h5>
           </div>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-          <div class="skill-card">
-            <div class="skill-icon figma">
-              <i class="fab fa-figma"></i>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+            <div class="skill-card">
+              <div class="skill-icon figma">
+                <i class="fab fa-figma"></i>
+              </div>
+              <h5 class="skill-name">Figma</h5>
             </div>
-            <h5 class="skill-name">Figma</h5>
           </div>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-          <div class="skill-card">
-            <div class="skill-icon canva">
-              <span class="canva-icon">C</span>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+            <div class="skill-card">
+              <div class="skill-icon canva">
+                <span class="canva-icon">C</span>
+              </div>
+              <h5 class="skill-name">Canva</h5>
             </div>
-            <h5 class="skill-name">Canva</h5>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- contact -->
-  <section id="contact" data-aos="fade-down">
-    <div class="container">
-      <h2 class="text-center mb-5 contact-title">Contact</h2>
-      <div class="row justify-content-center">
-        <div class="col-9 col-lg-6">
-          <div class="card card-contact py-5 px-5">
-            <form action="https://formspree.io/f/movaqgly" method="POST">
-              <div class="mb-3">
-                <label for="">Nama</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3">
-                <label for="">Email</label>
-                <input type="email" class="form-control" id="exampleInputNama1">
-              </div>
-              <div class="mb-3">
-                <label for="">Pesan</label>
-                <textarea name="pesan" id="pesan" class="form-control"></textarea>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-dark px-3">Kirim Pesan</button>
-              </div>
-            </form>
+    <!-- contact -->
+    <section id="contact" data-aos="fade-down">
+      <div class="container">
+        <h2 class="text-center mb-5 contact-title">Contact</h2>
+        <div class="row justify-content-center">
+          <div class="col-9 col-lg-6">
+            <div class="card card-contact py-5 px-5">
+              <form action="https://formspree.io/f/movaqgly" method="POST">
+                <div class="mb-3">
+                  <label for="">Nama</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputNama1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="">Pesan</label>
+                  <textarea
+                    name="pesan"
+                    id="pesan"
+                    class="form-control"
+                  ></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-dark px-3">
+                    Kirim Pesan
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer id="footer">
-    <div class="info" style="padding-top: 30px;">
-      <div class="footer text-center mb-2">
-        <a href="https://www.instagram.com/anshoria11/?hl=en" target="_blank" class="bi bi-instagram mx-1" style="color: #FD1D1D;"></a>
-        <a href="https://www.tiktok.com/@perfect_blueeee" target="_blank" class="bi bi-tiktok mx-1" style="color: black;"></a>
-        <a href="https://www.linkedin.com/in/m-anshoria/" target="_blank" class="bi bi-linkedin mx-1" style="color: #0077B5;"></a>
-        <a href="https://www.youtube.com/channel/UC-vpaVM-DTkkb33wt-WO2DA" target="_blank" class="bi bi-youtube mx-1" style="color: #FF0000;"></a>
+    <!-- Scroll to top -->
+    <div class="button-scroll">
+      <a
+        href="#"
+        class="btn btn-dark fa-solid fa-arrow-up scroll-to-top py-3 px-2"
+        style="display: none"
+      ></a>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer">
+      <div class="info" style="padding-top: 30px">
+        <div class="footer text-center mb-2">
+          <a
+            href="https://www.instagram.com/anshoria11/?hl=en"
+            target="_blank"
+            class="bi bi-instagram mx-1"
+            style="color: #fd1d1d"
+          ></a>
+          <a
+            href="https://www.tiktok.com/@perfect_blueeee"
+            target="_blank"
+            class="bi bi-tiktok mx-1"
+            style="color: black"
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/m-anshoria/"
+            target="_blank"
+            class="bi bi-linkedin mx-1"
+            style="color: #0077b5"
+          ></a>
+          <a
+            href="https://www.youtube.com/channel/UC-vpaVM-DTkkb33wt-WO2DA"
+            target="_blank"
+            class="bi bi-youtube mx-1"
+            style="color: #ff0000"
+          ></a>
+        </div>
+        <p class="footer-p text-center bi bi-c-circle">
+          Muhammad Anshori Akbar made by <b class="text-primary">Bootstrap</b>
+        </p>
       </div>
-      <p class="footer-p text-center bi bi-c-circle"> Muhammad Anshori Akbar made by <b
-        class="text-primary">Bootstrap</b></p>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- aos animasi -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1500,
-    });
-  </script>
+    <!-- aos animasi -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1500,
+      });
+    </script>
 
-  <!-- firebase database -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"></script>
+    <!-- firebase database -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"></script>
 
-  <!-- firebase database -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-    import { getFirestore, doc, getDoc, updateDoc, increment, collection, query, where, getDocs, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
-    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-    
-    const firebaseConfig = {
+    <!-- firebase database -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+        updateDoc,
+        increment,
+        collection,
+        query,
+        where,
+        getDocs,
+        setDoc,
+        deleteDoc,
+      } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+      import {
+        getAuth,
+        signInAnonymously,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+
+      const firebaseConfig = {
         apiKey: "AIzaSyBfTPjZybxTJ1Hp72U4ru0QpRYuTlv0Jqg",
         authDomain: "fitur-like-portofolio.firebaseapp.com",
-        databaseURL: "https://fitur-like-portofolio-default-rtdb.asia-southeast1.firebasedatabase.app",
+        databaseURL:
+          "https://fitur-like-portofolio-default-rtdb.asia-southeast1.firebasedatabase.app",
         projectId: "fitur-like-portofolio",
         storageBucket: "fitur-like-portofolio.appspot.com",
         messagingSenderId: "352307667051",
-        appId: "1:352307667051:web:600b73767fa356aaab512e"
-    };
-    
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const auth = getAuth(app);
+        appId: "1:352307667051:web:600b73767fa356aaab512e",
+      };
 
-    const likeButton = document.getElementById('like-button');
-    const likeCount = document.getElementById('like-count');
-    
-    const postId = 'portofolio-likes';
-    const postRef = doc(db, 'posts', postId);
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
 
-    async function updateLikeCount(user) {
+      const likeButton = document.getElementById("like-button");
+      const likeCount = document.getElementById("like-count");
+
+      const postId = "portofolio-likes";
+      const postRef = doc(db, "posts", postId);
+
+      async function updateLikeCount(user) {
         try {
-            console.log("Attempting to update like count...");
-            const docSnap = await getDoc(postRef);
+          console.log("Attempting to update like count...");
+          const docSnap = await getDoc(postRef);
 
-            if (docSnap.exists()) {
-                // Cek apakah pengguna sudah memberikan like
-                const likesRef = collection(postRef, 'likes');
-                const userLikeQuery = query(likesRef, where('userId', '==', user.uid));
-                const userLikeSnap = await getDocs(userLikeQuery);
+          if (docSnap.exists()) {
+            // Cek apakah pengguna sudah memberikan like
+            const likesRef = collection(postRef, "likes");
+            const userLikeQuery = query(
+              likesRef,
+              where("userId", "==", user.uid)
+            );
+            const userLikeSnap = await getDocs(userLikeQuery);
 
-                if (!userLikeSnap.empty) {
-                    console.log("User has already liked this post. Removing like...");
-                    
-                    // Hapus like
-                    await updateDoc(postRef, {
-                        likes: increment(-1)
-                    });
+            if (!userLikeSnap.empty) {
+              console.log("User has already liked this post. Removing like...");
 
-                    // Hapus informasi pengguna yang memberikan like
-                    await deleteDoc(doc(likesRef, user.uid));
+              // Hapus like
+              await updateDoc(postRef, {
+                likes: increment(-1),
+              });
 
-                    // Ubah ikon tombol menjadi bi-star
-                    likeButton.classList.remove('bi-star-fill');
-                    likeButton.classList.add('bi-star');
+              // Hapus informasi pengguna yang memberikan like
+              await deleteDoc(doc(likesRef, user.uid));
 
-                } else {
-                    console.log("User has not liked this post. Adding like...");
-                    
-                    // Tambahkan jumlah like
-                    await updateDoc(postRef, {
-                        likes: increment(1)
-                    });
-
-                    // Simpan informasi pengguna yang memberikan like
-                    await setDoc(doc(likesRef, user.uid), {
-                        userId: user.uid,
-                        timestamp: new Date()
-                    });
-
-                    // Ubah ikon tombol menjadi bi-star-fill
-                    likeButton.classList.remove('bi-star');
-                    likeButton.classList.add('bi-star-fill');
-                }
-
-                // Menampilkan jumlah like yang diperbarui
-                const updatedDocSnap = await getDoc(postRef);
-                const updatedData = updatedDocSnap.data();
-                likeCount.textContent = `Star ${updatedData.likes}`;
-                
+              // Ubah ikon tombol menjadi bi-star
+              likeButton.classList.remove("bi-star-fill");
+              likeButton.classList.add("bi-star");
             } else {
-                console.log("Dokumen tidak ditemukan!");
-            }
-        } catch (error) {
-            console.error("Error saat memperbarui jumlah like: ", error);
-        }
-    }
+              console.log("User has not liked this post. Adding like...");
 
-    async function initializeLikeCount() {
+              // Tambahkan jumlah like
+              await updateDoc(postRef, {
+                likes: increment(1),
+              });
+
+              // Simpan informasi pengguna yang memberikan like
+              await setDoc(doc(likesRef, user.uid), {
+                userId: user.uid,
+                timestamp: new Date(),
+              });
+
+              // Ubah ikon tombol menjadi bi-star-fill
+              likeButton.classList.remove("bi-star");
+              likeButton.classList.add("bi-star-fill");
+            }
+
+            // Menampilkan jumlah like yang diperbarui
+            const updatedDocSnap = await getDoc(postRef);
+            const updatedData = updatedDocSnap.data();
+            likeCount.textContent = `Star ${updatedData.likes}`;
+          } else {
+            console.log("Dokumen tidak ditemukan!");
+          }
+        } catch (error) {
+          console.error("Error saat memperbarui jumlah like: ", error);
+        }
+      }
+
+      async function initializeLikeCount() {
         try {
-            console.log("Initializing like count...");
-            const docSnap = await getDoc(postRef);
+          console.log("Initializing like count...");
+          const docSnap = await getDoc(postRef);
 
-            if (docSnap.exists()) {
-                const data = docSnap.data();
-                likeCount.textContent = `Star ${data.likes || 0}`;
-            } else {
-                console.log("Dokumen tidak ditemukan saat inisialisasi!");
-            }
+          if (docSnap.exists()) {
+            const data = docSnap.data();
+            likeCount.textContent = `Star ${data.likes || 0}`;
+          } else {
+            console.log("Dokumen tidak ditemukan saat inisialisasi!");
+          }
         } catch (error) {
-            console.error("Error saat mengambil jumlah like: ", error);
+          console.error("Error saat mengambil jumlah like: ", error);
         }
-    }
+      }
 
-    onAuthStateChanged(auth, (user) => {
+      onAuthStateChanged(auth, (user) => {
         if (user) {
-            likeButton.addEventListener('click', () => updateLikeCount(user));
+          likeButton.addEventListener("click", () => updateLikeCount(user));
         } else {
-            signInAnonymously(auth)
-                .then(() => {
-                    console.log("Signed in anonymously");
-                })
-                .catch((error) => {
-                    console.error("Error signing in anonymously: ", error);
-                });
+          signInAnonymously(auth)
+            .then(() => {
+              console.log("Signed in anonymously");
+            })
+            .catch((error) => {
+              console.error("Error signing in anonymously: ", error);
+            });
         }
-    });
-
-    initializeLikeCount();
-</script>
-
-
-  <!-- myjs -->
-  <script src="script.js"></script>
-  <!-- sweetalert -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.all.min.js"></script>
-
-  <script type="text/JavaScript">
-    function star() {
-      document.getElementById('clickSound').play();
-
-      Swal.fire({
-        title: "Thankyou🙌╰(*°▽°*)╯",
-        imageUrl: "img/Yuji-Itadori-PNG.png",
-        imageWidth: 400,
-        imageHeight: 500,
-        imageAlt: "Makasi",
-        showConfirmButton: false,
-        timer: 4000
       });
-    }
-    function sweetalert() {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Halaman web tidak tersedia!",
-        confirmButtonColor: "	#000000"
-      });
-    }
-  </script>
-  <!-- Print PDF -->
-  <script>
-    function PrintPDF() {
-      window.open('file/MyResume.pdf');
-    }
-  </script>
 
+      initializeLikeCount();
+    </script>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-</body>
+    <!-- myjs -->
+    <script src="script.js"></script>
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.all.min.js"></script>
 
+    <script type="text/JavaScript">
+      function star() {
+        document.getElementById('clickSound').play();
+
+        Swal.fire({
+          title: "Thankyou🙌╰(*°▽°*)╯",
+          imageUrl: "img/Yuji-Itadori-PNG.png",
+          imageWidth: 400,
+          imageHeight: 500,
+          imageAlt: "Makasi",
+          showConfirmButton: false,
+          timer: 4000
+        });
+      }
+      function sweetalert() {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Halaman web tidak tersedia!",
+          confirmButtonColor: "	#000000"
+        });
+      }
+    </script>
+    <!-- Print PDF -->
+    <script>
+      function PrintPDF() {
+        window.open("file/MyResume.pdf");
+      }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
