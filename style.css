@@ -254,7 +254,7 @@ body {
   margin: 10px auto 0;
 }
 
-.projek-card.hidden {
+.projek-col {
   margin-top: 2rem;
 }
 .cover {
@@ -500,12 +500,10 @@ body {
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
+    margin-top: 0.4rem;
   }
 
   /* projek */
-  .projek-card.hidden {
-    margin-top: 0.4rem;
-  }
   .projek-button {
     margin-top: 0rem !important;
   }
