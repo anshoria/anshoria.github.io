@@ -435,6 +435,7 @@ body {
     font-size: 1.5rem !important;
     display: flex;
     justify-content: center;
+    text-align: center;
   }
   .hero-job {
     font-size: 1.1rem !important;
