@@ -311,6 +311,13 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.skill-icon.mysql i {
+  color: #00758F;
+}
+
+.skill-icon.ms-office i {
+  color: #D83B01;
+}
 
 @media (hover: hover) {
   .skill-card:hover {
