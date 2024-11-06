@@ -1,3 +1,164 @@
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #333333;
+  --accent-color: #666666;
+  --text-color: #ffffff;
+  --hover-color: #1a1a1a;
+}
+
+.hero-col {
+  padding: 4rem 2rem;
+}
+
+/* Text Styles */
+.hero-greetings {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.hero-nama {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.hero-job {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+/* Button Styles */
+.hero-button {
+  display: flex;
+  gap: 1rem;
+}
+
+.custom-btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.custom-btn-primary:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.custom-btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.custom-btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Wave Animation */
+.wave {
+  animation: wave-animation 2.5s infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(0deg) }
+  10% { transform: rotate(14deg) }
+  20% { transform: rotate(-8deg) }
+  30% { transform: rotate(14deg) }
+  40% { transform: rotate(-4deg) }
+  50% { transform: rotate(10deg) }
+  60% { transform: rotate(0deg) }
+  100% { transform: rotate(0deg) }
+}
+
+/* Text Rotation */
+.txt-rotate > .wrap {
+  border-right: 0.08em solid var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-col {
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-nama {
+    font-size: 2rem;
+  }
+
+  .hero-job {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-col {
+    padding: 2rem 1rem;
+  }
+
+  .hero-button {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-button a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-nama {
+    font-size: 1.75rem;
+  }
+
+  .hero-greetings {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-col {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .hero-nama {
+    font-size: 1.5rem;
+  }
+
+  .hero-job {
+    font-size: 1.1rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 h2 p {
   font-family: Montserrat;
 }
