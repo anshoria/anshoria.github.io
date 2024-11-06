@@ -100,7 +100,7 @@
         </div>
         <!-- Fitur Star -->
         <a
-          class="btn btn-dark px-3 border-dark bi bi-star-fill btn-sm"
+          class="btn px-4 py-2 border-dark bi bi-star btn-sm"
           onclick="star()"
           id="like-button"
         >
@@ -161,51 +161,38 @@
               loading="lazy"
             />
           </div>
-          <!-- HTML -->
           <div class="hero-col col-lg-6">
             <div class="hero-text">
-              <p class="hero-greetings animate__animated animate__fadeInDown">
-                <span class="wave">👋</span> Hello! Salam Kenal
-              </p>
-              <h2
-                class="hero-nama animate__animated animate__fadeInDown animate__delay-0.5s"
+              <p
+                class="hero-greetings"
+                data-aos="fade-down"
+                data-aos-delay="1000"
               >
+                Halo semua 👋
+              </p>
+              <h2 class="hero-nama" data-aos="fade-down" data-aos-delay="1050">
                 MUHAMMAD ANSHORI AKBAR
               </h2>
-              <div
-                class="hero-job-wrapper animate__animated animate__fadeInUp animate__delay-1s"
+              <p
+                class="hero-job text-secondary"
+                data-aos="fade-down"
+                data-aos-delay="1100"
               >
-                <p class="hero-job">
-                  <span
-                    class="txt-rotate"
-                    data-period="2000"
-                    data-rotate='[ "Web Developer", "UI/UX Designer", "Creative Coder" ]'
-                  >
-                  </span>
-                </p>
-                <p class="hero-tagline">
-                  Transforming ideas into seamless digital experiences
-                </p>
-              </div>
+                Web Developer & UI/UX Designer
+              </p>
             </div>
-            <div
-              class="hero-button animate__animated animate__fadeInUp animate__delay-1s"
-            >
+            <div class="hero-button" data-aos="fade-down" data-aos-delay="1150">
               <a
                 href="https://wa.me/+6281254402608"
-                class="btn btn-dark custom-btn-primary"
+                class="btn btn-dark px-4 py-2"
                 target="_blank"
+                >Hubungi saya</a
               >
-                <i class="bi bi-whatsapp me-2"></i>
-                <span>Hubungi Saya</span>
-              </a>
               <a
                 href="#projects"
-                class="hero-portofolio btn custom-btn-outline"
+                class="hero-portofolio btn border-dark px-4 py-2 ms-2"
+                >Lihat Portofolio</a
               >
-                <i class="bi bi-collection me-2"></i>
-                <span>Portofolio</span>
-              </a>
             </div>
           </div>
         </div>
@@ -361,9 +348,7 @@
           <div class="card" style="width: 20rem">
             <img src="img/Projek-Dayang.png" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">
-                Sistem Informasi Layanan Dayang Express
-              </h5>
+              <h5 class="card-title">Sistem Informasi Layanan Dayang Express</h5>
               <div class="mb-2">
                 <span class="badge rounded-pill text-bg-secondary"
                   >Laravel 11</span
@@ -377,14 +362,15 @@
                 <span class="badge rounded-pill text-bg-secondary"
                   >Leaflet js</span
                 >
-                <span class="badge rounded-pill text-bg-secondary">AOS</span>
+                <span class="badge rounded-pill text-bg-secondary"
+                  >AOS</span
+                >
                 <span class="badge rounded-pill text-bg-secondary"
                   >Midtrans</span
                 >
               </div>
               <p class="card-text">
-                Sistem informasi layanan dayang express adalah website yang
-                digunakan untuk layanan pengiriman barang dayang express.
+                Sistem informasi layanan dayang express adalah website yang digunakan untuk layanan pengiriman barang dayang express.
               </p>
               <div class="pt-2">
                 <a
@@ -395,12 +381,12 @@
                   >Detail</a
                 >
                 <a
-                  href="https://dayangexpress.com"
-                  target="_blank"
-                  class="btn border-dark border-1"
-                  id="btn-preview"
-                  >Preview</a
-                >
+                    href="https://dayangexpress.com"
+                    target="_blank"
+                    class="btn border-dark border-1"
+                    id="btn-preview"
+                    >Preview</a
+                  >
               </div>
             </div>
           </div>
@@ -415,7 +401,11 @@
         >
           <div class="projek-col col-sm-12 col-md-12 col-lg-6 col-xl-4">
             <div class="card" style="width: 20rem">
-              <img src="img/Projek-Dayang.png" class="card-img-top" alt="..." />
+              <img
+                src="img/Projek-Dayang.png"
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Dashboard Dayang Express</h5>
                 <div class="mb-2">
@@ -428,7 +418,7 @@
                 </div>
                 <p class="card-text">
                   Dashboard Dayang Express digunakan untuk mengelola urusan
-                  pengiriman barang Dayang Express.
+                pengiriman barang Dayang Express.
                 </p>
                 <div class="pt-2">
                   <a
@@ -1296,19 +1286,25 @@
               <i class="bi bi-laptop-fill text-success"></i>
             </div>
             <div class="modal-body mt-4 pb-5">
-              <h1 class="modal-title fs-1">
-                Sistem Informasi Layanan Dayang Express
-              </h1>
+              <h1 class="modal-title fs-1">Sistem Informasi Layanan Dayang Express</h1>
               <span class="badge rounded-pill text-bg-secondary"
-                >Laravel 11</span
-              >
-              <span class="badge rounded-pill text-bg-secondary">Tailwind</span>
-              <span class="badge rounded-pill text-bg-secondary">Filament</span>
-              <span class="badge rounded-pill text-bg-secondary"
-                >Leaflet js</span
-              >
-              <span class="badge rounded-pill text-bg-secondary">AOS</span>
-              <span class="badge rounded-pill text-bg-secondary">Midtrans</span>
+                  >Laravel 11</span
+                >
+                <span class="badge rounded-pill text-bg-secondary"
+                  >Tailwind</span
+                >
+                <span class="badge rounded-pill text-bg-secondary"
+                  >Filament</span
+                >
+                <span class="badge rounded-pill text-bg-secondary"
+                  >Leaflet js</span
+                >
+                <span class="badge rounded-pill text-bg-secondary"
+                  >AOS</span
+                >
+                <span class="badge rounded-pill text-bg-secondary"
+                  >Midtrans</span
+                >
               <!-- content -->
               <div class="content mt-5">
                 <div class="row">
@@ -1319,13 +1315,8 @@
                   </div>
                   <div class="col-sm-12 col-lg-9">
                     <p class="modal-p">
-                      Sistem Informasi Layanan Dayang Express adalah website
-                      yang digunakan untuk layanan pengiriman barang dayang
-                      express. Website ini memiliki 3 role yaitu pelanggan,
-                      staff, dan admin. Seluruh operasional layanan dilakukan
-                      pada website ini secara menyeluruh. Website ini memiliki
-                      fitur pelacakan pengiriman, pendaftaran pelanggan,
-                      e-wallet dayangexpress, pembayaran, dan lainnya.
+                      Sistem Informasi Layanan Dayang Express adalah website yang digunakan untuk layanan pengiriman barang dayang express. Website ini memiliki 3 role yaitu pelanggan, staff, dan admin. 
+                      Seluruh operasional layanan dilakukan pada website ini secara menyeluruh. Website ini memiliki fitur pelacakan pengiriman, pendaftaran pelanggan, e-wallet dayangexpress, pembayaran, dan lainnya.
                     </p>
                   </div>
                 </div>
@@ -1627,8 +1618,8 @@
               await deleteDoc(doc(likesRef, user.uid));
 
               // Ubah ikon tombol menjadi bi-star
-              likeButton.classList.remove("bi-star");
-              likeButton.classList.add("bi-star-fill");
+              likeButton.classList.remove("bi-star-fill");
+              likeButton.classList.add("bi-star");
             } else {
               console.log("User has not liked this post. Adding like...");
 
@@ -1644,8 +1635,8 @@
               });
 
               // Ubah ikon tombol menjadi bi-star-fill
-              likeButton.classList.remove("bi-star-fill");
-              likeButton.classList.add("bi-star");
+              likeButton.classList.remove("bi-star");
+              likeButton.classList.add("bi-star-fill");
             }
 
             // Menampilkan jumlah like yang diperbarui
@@ -1739,62 +1730,5 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
-
-    <!-- JavaScript for Text Rotation -->
-    <script>
-      var TxtRotate = function (el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = "";
-        this.tick();
-        this.isDeleting = false;
-      };
-
-      TxtRotate.prototype.tick = function () {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-          this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-          this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) {
-          delta /= 2;
-        }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-          delta = this.period;
-          this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === "") {
-          this.isDeleting = false;
-          this.loopNum++;
-          delta = 500;
-        }
-
-        setTimeout(function () {
-          that.tick();
-        }, delta);
-      };
-
-      window.onload = function () {
-        var elements = document.getElementsByClassName("txt-rotate");
-        for (var i = 0; i < elements.length; i++) {
-          var toRotate = elements[i].getAttribute("data-rotate");
-          var period = elements[i].getAttribute("data-period");
-          if (toRotate) {
-            new TxtRotate(elements[i], JSON.parse(toRotate), period);
-          }
-        }
-      };
-    </script>
   </body>
 </html>
